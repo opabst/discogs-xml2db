@@ -93,7 +93,7 @@ class ReleaseHandler(xml.sax.handler.ContentHandler):
 
 		if name == 'release':
 			self.release = model.Release()
-			self.release.id = int(attrs['id'])
+			self.release.id = int(attrs['id'].replace(" ", "")) # omit whitespaces in id to avoid conversion errors
 			self.release.status = attrs['status']
 
 		elif name == 'track' and self.stack[-2] == 'tracklist':
