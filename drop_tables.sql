@@ -1,3 +1,5 @@
+SET search_path = discogs;
+
 DROP TABLE artist;
 DROP TABLE artists_images;
 DROP TABLE country;
