@@ -115,6 +115,7 @@ that --params is used, e.g.:
 	opt_parser.add_argument('-d', '--date', help='Date of release. For example 20110301')
 	opt_parser.add_argument('-o', '--output', default='json', help='What to output to')
 	opt_parser.add_argument('-p', '--params', help='Parameters for output, e.g. connection string')
+	opt_parser.add_argument('-s', '--schema', help='Schema for PostgreSQL import')
 	opt_parser.add_argument('-i', '--ignore-unknown-tags', action='store_true', dest='ignore_unknown_tags', help='Do not error out when encountering unknown tags')
 	opt_parser.add_argument('-q', '--quality', dest='data_quality', help='Comma-separated list of permissable data_quality values.')
 	opt_parser.add_argument('file', nargs='*', help='Specific file(s) to import. Default is to parse artists, labels, releases matching -d')

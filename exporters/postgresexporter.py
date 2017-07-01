@@ -38,10 +38,11 @@ class PostgresExporter(object):
 		def __init__(self, args):
 			self.args = args
 
-	def __init__(self, connection_string, data_quality):
+	def __init__(self, connection_string, schema, data_quality):
 		self.formatNames = {}
 		self.connect(connection_string)
 		self.min_data_quality = data_quality
+		self.schema = schema
 
 	def connect(self, connection_string):
 		import psycopg2
@@ -80,7 +81,8 @@ class PostgresExporter(object):
 		qkey = (table, tuple(columns))
 		q = self._query_cache.get(qkey)
 		if q is None:
-			q = "INSERT INTO {table}({columns}) VALUES ({escaped});".format(
+			q = "INSERT INTO {schema}.{table}({columns}) VALUES ({escaped});".format(
+					schema = self.schema,
 					table=table,
 					columns=", ".join(columns),
 					escaped=", ".join(["%s"] * len(columns)))
