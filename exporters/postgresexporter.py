@@ -80,7 +80,7 @@ class PostgresExporter(object):
 		qkey = (table, tuple(columns))
 		q = self._query_cache.get(qkey)
 		if q is None:
-			q = "INSERT INTO {table}({columns}) VALUES ({escaped});".format(
+			q = "INSERT INTO discogs.{table}({columns}) VALUES ({escaped});".format(
 					table=table,
 					columns=", ".join(columns),
 					escaped=", ".join(["%s"] * len(columns)))
