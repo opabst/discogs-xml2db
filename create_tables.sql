@@ -11,7 +11,7 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 SET synchronous_commit=off;
- 
+
 CREATE UNLOGGED TABLE artist (
     id 				integer NOT NULL,
     name 			text NOT NULL,
@@ -105,7 +105,7 @@ CREATE UNLOGGED TABLE releases_formats (
     release_id 		integer,
     "position" 		integer,
     format_name 	text,
-    qty 			integer,
+    qty 			numeric(100,0),
     descriptions 	text[]
 );
 
