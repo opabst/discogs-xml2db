@@ -25,7 +25,6 @@ from os import path
 from model import ParserStopError
 # from collections import deque
 
-# sys.setdefaultencoding('utf-8')
 options = None
 
 # http://www.discogs.com/help/voting-guidelines.html
