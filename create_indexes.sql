@@ -1,3 +1,4 @@
+SET search_path = discogs;
 ALTER TABLE ONLY artist ADD CONSTRAINT artist_pkey PRIMARY KEY (id);
 ALTER TABLE ONLY genre ADD CONSTRAINT genre_pkey PRIMARY KEY (id);
 ALTER TABLE ONLY label ADD CONSTRAINT label_pkey PRIMARY KEY (id);
