@@ -1,3 +1,4 @@
+SET search_path=discogs;
 -- Add in missing Various artist
 INSERT INTO artist(id, name)VALUES (194, 'Various');
 
